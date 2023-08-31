@@ -1,0 +1,25 @@
+.title {
+  padding: 50px;
+  background-color: beige;
+  box-shadow: 0 0 10px 10px rgb(156, 156, 156);
+  box-sizing: border-box;
+  /* opacity: 0.2; */
+  /* display: none; */
+}
+
+.box1 {
+  background-color: blue;
+  float: left;
+  /* width: 20%; */
+}
+
+.box2 {
+  background-color: red;
+  float: right;
+}
+
+.box3 {
+  background-color: green;
+  /* float: left; */
+  clear: both;
+}
