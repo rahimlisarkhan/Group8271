@@ -88,6 +88,7 @@ body {
   background-color: white;
   float: left;
   overflow: hidden;
+  width: calc(100% / 3);
 }
 
 .product-card img {
