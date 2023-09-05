@@ -1,0 +1,51 @@
+.header {
+  height: 100px;
+  background-color: blue;
+  /* position: static; */
+
+  /* position: fixed; */
+  /* width: 100%; */
+
+  /* position: sticky;
+  top: 0; */
+}
+
+main {
+  height: 3000px;
+}
+
+.box1 {
+  width: 600px;
+  height: 300px;
+  background-color: red;
+
+  position: relative;
+}
+
+.basket {
+  width: 100%;
+  height: 50px;
+  background-color: yellow;
+  /* position: sticky; */
+  /* top: 20px; */
+
+  position: absolute;
+  bottom: 20px;
+  /* right: 50px; */
+  /* z-index: 2; */
+  /* z-index: 20; */
+}
+
+.basket2 {
+  width: 200px;
+  height: 50px;
+  background-color: green;
+  /* position: sticky; */
+  /* top: 20px; */
+
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  /* z-index: 10; */
+}
