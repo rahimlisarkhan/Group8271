@@ -1,0 +1,111 @@
+:root {
+  --mainColor: #963cfb;
+  --smallSpace: 12px;
+  --mediumSpace: 16px;
+  --largeSpace: 20px;
+
+  --fontHeadline: 12px;
+  --body2: 16px;
+}
+
+.title {
+  background-color: var(--mainColor);
+  font-size: var(--fontHeadline);
+}
+
+.desc {
+  background-color: green;
+  color: white;
+  display: none;
+}
+
+.title:hover {
+  background-color: red;
+  color: white;
+  /* height: 400px; */
+}
+
+.title:hover + .desc {
+  display: flex;
+}
+
+.btn {
+  background: var(--mainColor);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn:active {
+  background-color: red;
+  transform: scale(0.95);
+}
+
+.btn:hover {
+  opacity: 0.7;
+}
+
+.btn:disabled {
+  background-color: rgb(161, 161, 161);
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+.btn:hover:disabled {
+  opacity: 1;
+  cursor: auto;
+}
+
+.form_input {
+  color: yellow;
+}
+
+.form_input:focus {
+  background-color: red;
+}
+
+.form_input::placeholder {
+  color: aqua;
+}
+
+.checkBox:checked + .desc {
+  display: block;
+}
+
+.list {
+  display: flex;
+  gap: 5px;
+  list-style: none;
+  align-items: center;
+}
+/* 
+.list li:first-child {
+  background-color: red;
+  padding: 12px;
+  color: white;
+}
+
+.list li:last-child {
+  background-color: red;
+  padding: 12px;
+  color: white;
+} */
+
+/* .car-list .item:last-child{
+
+} */
+
+/* .list li:nth-child(odd) {
+  background-color: red;
+  padding: 12px;
+  color: white;
+} */
+
+.list li:not(:last-child) {
+  background-color: red;
+  margin-right: 20px;
+}
