@@ -1,0 +1,48 @@
+@import url("./reset.css");
+@import url("./variable.css");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fontMain);
+}
+
+#header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px;
+  height: 107px;
+  border-bottom: 1px solid var(--gray10);
+}
+
+.logo_content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-list {
+  display: flex;
+  gap: 40px;
+}
+
+.nav-item:last-child .nav-link {
+  font-weight: 800;
+  color: var(--mainGreen);
+}
+
+.nav-link {
+  color: var(--textBlack);
+  font-weight: 500;
+}
+
+.logo_title {
+  font-size: 32px;
+  font-family: var(--fontOpenSans);
+  color: var(--textBlack);
+  font-weight: 700;
+  letter-spacing: -1.28px;
+}
