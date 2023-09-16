@@ -1,0 +1,53 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.header {
+  height: 100px;
+  background-color: red;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 10px;
+}
+
+.navbar ul a {
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.btn-ham {
+  border: none;
+  background-color: blueviolet;
+  color: white;
+  display: none;
+}
+
+.container {
+  padding: 30px 90px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: yellow;
+  justify-content: center;
+  /* justify-content: space-between; */
+  gap: 20px;
+}
+
+.card {
+  width: 260px;
+  height: 320px;
+  background-color: burlywood;
+  border-radius: 10px;
+}

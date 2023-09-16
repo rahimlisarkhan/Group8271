@@ -1,0 +1,31 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+.header {
+  height: 100px;
+  background-color: red;
+
+  display: flex;
+  justify-content: space-between;
+
+  padding: 20px;
+}
+
+/* 600px - Mobile  */
+/* 900px - Tablet  */
+/* 1200px - Laptop  */
+
+/* for mobile */
+@media screen and (min-width: 600px) {
+  .header {
+    background-color: green;
+  }
+}
+
+/* for tablet */
+@media screen and (min-width: 900px) {
+  .header {
+    background-color: yellow;
+  }
+}

@@ -1,0 +1,40 @@
+/* 600px - Mobile  */
+/* 900px - Tablet  */
+/* 1200px - Laptop  */
+
+/* for tablet */
+@media screen and (max-width: 900px) {
+  .header {
+    background-color: yellow;
+  }
+
+  .container {
+    padding: 30px;
+    /* justify-content: flex-end; */
+  }
+
+  .btn-ham {
+    display: block;
+  }
+  .navbar {
+    display: none;
+  }
+}
+
+/* for mobile */
+@media screen and (max-width: 600px) {
+  .header {
+    background-color: green;
+  }
+
+  .container {
+    padding: 10px;
+  }
+
+  .card {
+    flex-grow: 1;
+  }
+  /* .card {
+      width: 100%;
+    } */
+}

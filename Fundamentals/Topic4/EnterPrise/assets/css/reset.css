@@ -135,3 +135,7 @@ a {
 * {
   box-sizing: border-box;
 }
+
+body {
+  font-family: var(--fontMain);
+}
