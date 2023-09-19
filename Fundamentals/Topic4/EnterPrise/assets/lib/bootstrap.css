@@ -1,0 +1,47 @@
+.shadow-sm {
+  box-shadow: 0 0 5px 5px rgba(160, 160, 160, 0.785);
+}
+
+.shadow {
+  box-shadow: 0 0 10px 10px rgba(160, 160, 160, 0.785);
+}
+
+.bg-blue {
+  background-color: blue;
+}
+
+.bg-red {
+  background-color: red;
+}
+
+.bg-red-800 {
+  background-color: rgb(146, 9, 9);
+}
+
+.text-red {
+  color: red;
+}
+
+.text-red-700 {
+  color: rgb(146, 13, 13);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.d-none {
+  display: none;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}

@@ -14,6 +14,10 @@
     /* align-items: center; */
   }
 
+  .info_content {
+    gap: 24px;
+  }
+
   .carusel,
   .info_image {
     width: 100%;
@@ -26,7 +30,7 @@
   }
 
   .carusel_title {
-    font-size: 32px;
+    font-size: 30px;
     line-height: 40px; /* 114.286% */
   }
 
