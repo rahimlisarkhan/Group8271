@@ -52,7 +52,7 @@ var arr1 = [12, 20, 25, 30, 45, 101, 102, 105, 1001];
 // arr1.splice(4, null, 109, "Banana", "Cake");
 // arr1.splice(arr1.length - 3, 3);
 // arr1.splice(2, 3);
-arr1.splice(2, 1, 210, 310, 400);
+// arr1.splice(2, 1, 210, 310, 400);
 
 // arr1.splice(2, 0, 210, 310, 400);
 

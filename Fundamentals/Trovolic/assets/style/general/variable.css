@@ -1,0 +1,25 @@
+:root {
+  --mainColor: #1090cb;
+
+  --textBlack: #252525;
+
+  --gray100: #c7c7c7;
+  --gray200: #c4c4c4;
+
+  --green100: #ecffda;
+  --green200: #08d3bb;
+
+  --purple100: #efeaff;
+  --purple200: #4628a4;
+  --purple300: #9208d3;
+
+  --blue50: #e8f4fa;
+  --blue100: #dae6ff;
+  --blue200: #00329b;
+
+  --orange100: #ffe5da;
+  --orange200: #bb3800;
+
+  --black: #000000;
+  --white: #ffffff;
+}

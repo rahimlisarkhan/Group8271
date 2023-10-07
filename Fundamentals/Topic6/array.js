@@ -1,12 +1,12 @@
-var a = 5;
+// var a = 5;
 
-var b = 4;
+// var b = 4;
 
-var c = 2;
+// var c = 2;
 
-var f = "fullname";
+// var f = "fullname";
 
-var list = [5, 4, 99, "fullname"]; //? Array
+// var list = [5, 4, 99, "fullname"]; //? Array
 
 // var result = list[3];
 
@@ -58,6 +58,35 @@ var arr1 = [1, 2, 3, 4, 5, 6];
 // arr1[6] = 101;
 // arr1[10] = 101;
 
-console.log(arr1);
+// console.log(arr1);
 
 // console.log(result);
+
+// var a = 5
+
+// var b = a
+
+// a = 10
+
+// var a = [5, 4, 5, 6, 3];
+// var a = [5, "Fullname", true, [1, 2, [77, 88]], null, [56, 66]];
+
+// var result = a.flat(2);
+
+// console.log(result);
+
+// var b = [45, 3];
+
+// var c = a.concat();
+
+// a[0] = 101;
+
+// console.log(c);
+
+// a.splice(0, null, "Banana");
+// a.splice(0, 1);
+// a.splice(a.length - 1, 1);
+
+// a.reverse();
+
+// a[0] = 10;
