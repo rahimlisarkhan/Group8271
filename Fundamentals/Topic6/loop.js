@@ -39,12 +39,20 @@ var people = [
 
 var reverseArr = [];
 
-for (var i = people.length - 1; i >= 0; i--) {
+// for (var i = people.length - 1; i >= 0; i--) {
+//   var el = people[i];
+//   reverseArr.push(el);
+// }
+
+var i = people.length - 1;
+while (i >= 0) {
   var el = people[i];
   reverseArr.push(el);
+
+  i--;
 }
 
-console.log(reverseArr);
+// console.log(reverseArr);
 
 // var result = people.reverse();
 
@@ -81,3 +89,66 @@ console.log(reverseArr);
 // }
 
 // console.log(aIleBaslayan);
+
+// var list = ["Mango", "Banana", "Pie", "Apple"];
+
+// for (var el of list) {
+//   console.log(el);
+// }
+
+// for (var i in list) {
+//   console.log(list[i]);
+// }
+
+// for (var i = 0; i < list.length; i++) {
+//   console.log(list[i]);
+// }
+
+// var list = [
+//   ["Mango", "Banana"],
+//   ["Pie", "Apple"],
+//   ["Carrot", "Cucumber"],
+// ];
+
+// console.log("list", list[0][0]);
+// console.log("list", list[0][1]);
+// console.log("list", list[1][0]);
+// console.log("list", list[1][1]);
+// console.log("list", list[2][0]);
+// console.log("list", list[2][1]);
+
+// for (var i = 0; i < list.length; i++) {
+//   var kicikList = list[i];
+
+//   for (var j = 0; j < kicikList.length; j++) {
+//     if (kicikList[j].startsWith("P")) {
+//       console.log(kicikList[j]);
+//     }
+//   }
+// }
+
+// for (var i = 0; i < 10; i++) {
+//   for (var k = 0; k < 5; k++) {
+//     // console.log(i, k);
+//   }
+// }
+
+var list = ["Mango", "Banana", "Pie", "Apple"];
+
+var i = 0;
+
+while (i < list.length) {
+  var el = list[i];
+
+  // console.log(el);
+
+  i++;
+}
+
+// do {
+//   var el = list[i];
+
+//   console.log(el);
+
+//   i++;
+// } while (i < list.length);
