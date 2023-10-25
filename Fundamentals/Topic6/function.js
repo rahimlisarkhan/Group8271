@@ -79,7 +79,7 @@ function handleTotalAmount(myMoney, productCount, productPrice, name) {
 
 // handleTotalAmount(20, 3, 2, "John");
 
-// handleTotalAmount(100, 2, 50, "Marry");
+handleTotalAmount(100, 2, 50, "Marry");
 
 // var a = 3;
 // var b = 2;
@@ -166,3 +166,5 @@ function show2yebolenenler(list) {
 
 show2yebolenenler(arr1);
 show2yebolenenler(arr2);
+
+var fruits = ["Mango", 2, "Pie", true];
