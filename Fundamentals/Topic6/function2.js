@@ -130,6 +130,134 @@ function evenOrOdd(number) {
   }
 }
 
-var result1 = evenOrOdd(-42);
+// var result1 = evenOrOdd(-42);
+
+// console.log(result1);
+
+// function convertStringToArray(text) {}
+
+// var result = convertStringToArray("Ayaz"); //! ["a","y","a","z"]
+
+// console.log(result);
+
+// function convertSanToTime(num) {}
+
+// convertSanToTime(9250); // "saat: 2 or  min:150"
+
+// var userName = prompt();
+// var userAge = prompt();
+// var userJob = prompt();
+
+function showUserInfo() {}
+
+var Name = prompt("Adinizi Daxil Edin:");
+var Surname = prompt("Soy Adinizi Daxil Edin:");
+var Age = prompt("Yasinizi Daxil Edin:");
+
+function showUserInfo(first, lastname, age) {
+  var result = `User's Name is: ${first} | User's Surname is: ${lastname} | User's Age is: ${age}`;
+
+  alert(result);
+}
+
+showUserInfo(Name, Surname, Age);
+
+var a = prompt("Reqem1"); //! 5
+var b = prompt("Reqem2"); //! 5
+
+var numa = parseInt(a);
+var numb = parseInt(b);
+
+function sum(num1 = 0, num2 = 0) {
+  if (num1 == null) {
+    num1 = 0;
+  }
+
+  if (num2 == null) {
+    num2 = 0;
+  }
+
+  return num1 + num2;
+}
+
+var result1 = sum(numa,numb);
 
 console.log(result1);
+
+var userName = prompt("Please Enter the name");
+var userAge = prompt("Please Enter the your age");
+var userJob = prompt("Please Enter the your job");
+
+function showSerInfo(name_f = "Mr/Mrs", age, job) {
+
+  if (age != undefined && job != undefvar a = prompt("Reqem1"); //! 5
+  var b = prompt("Reqem2"); //! 5
+  var numa = parseInt(a);
+  var numb = parseInt(b);
+  function sum(num1 = 0, num2 = 0) {
+    if (num1 == null) {
+      num1 = 0;
+    }var a = prompt("Reqem1"); //! 5
+    var b = prompt("Reqem2"); //! 5
+    var numa = parseInt(a);
+    var numb = parseInt(b);
+    function sum(num1 = 0, num2 = 0) {
+      if (num1 == null) {
+        num1 = 0;
+      }
+      if (num2 == null) {
+        num2 = 0;
+      }
+      return num1 + num2;
+    }
+    var result1 = sum(numa,numb);
+    console.log(result1);
+    if (num2 == null) {
+      num2 = 0;
+    }
+    return num1 + num2;
+  }
+  var result1 = sum(numa,numb);
+  console.log(result1);ined) {
+    alert(
+      `Hörmetli ${name_f} xoş geldiniz. Daxil etdiyiniz melumatlara göre sizin ${age} yaşınız var ve Siz ${job}siniz!  `
+    );
+  } else {
+    alert(
+      `Hörmetli ${name_f} xoş geldiniz. Zehmet olmasa yasınızı ve mesleyinizi girin`
+    );
+  }
+
+
+}
+
+// showSerInfo(userName, userAge, userJob);
+
+
+
+// var nums = [2,3,4,5,6] //! [6,5,4,3,2]
+
+// function reverseArray(arr){
+
+// }
+
+// reverseArray(nums)
+
+
+var nums  = [21,43,101,2,10]
+
+function maxOrMinNumber(arr,method){
+
+  if(method === true){
+    
+  }else{
+
+
+  }
+
+}
+
+
+maxOrMinNumber(nums,false) // 101
+maxOrMinNumber(nums,true) // 2
+
