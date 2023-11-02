@@ -39,18 +39,120 @@
 
 // console.log(result); //? 166
 
-var a = 1;
+// let const var
 
-function A() {
-  //   var a = 2;
+// let a = 1;
+
+// function A() {
+//   // let a = 2;
+
+//   function B() {
+//     // let a = 8;
+
+//     console.log("B-nin dunyasi:", a);
+//   }
+
+//   B();
+// }
+
+// A();
+
+// function A() {
+//   return 100;
+// }
+
+// // var result5 = A();
+
+// var B = A;
+
+// console.log(B);
+
+// var result = B();
+
+// console.log(result);
+
+// function foo() {
+//   function bar() {
+//     return 200;
+//   }
+
+//   // return bar; //? 200
+// }
+
+// // var A = foo;
+// var A = foo; //? 200
+
+// console.log(A);
+
+// var outerFunction = function () {
+//   var x = 5;
+
+//   var nestedFunction = function () {
+//     var y = 7;
+
+//     // What will this print? (x = 5)
+//     console.log("X: " + x);
+
+//     // What will this print? (y = 7)
+//     console.log("Y: " + y);
+
+//     var z = 10;
+//     // What will this print? (z = 10)
+//     return "Z (inside): " + z;
+//   };
+
+//   return nestedFunction; //
+// };
+
+// var myFunction = outerFunction;
+
+// var my2Fn = myFunction();
+
+// console.log(my2Fn());
+var d = 10;
+
+var A = function () {
+  // var d = 20;
 
   function B() {
-    // var a = 8;
+    var g = 3.13;
 
-    console.log("B-nin dunyasi:", a);
+    return g;
   }
 
-  B();
-}
+  return d;
+};
 
-A();
+// var result = A();
+
+// console.log(result);
+
+// Situation 1
+// ------------------------------------------
+var myVar1 = 1;
+
+// function a1() {
+myVar1 = 5 - 3;
+
+//   b1();
+//   alert("Q1 | a: " + myVar1);
+// }
+
+// function b1() {
+//   alert("Q1 | b: " + myVar1);
+// }
+
+// a1();
+
+// Here myVar2 (global) is 1
+// var myVar2 = 1;
+
+// function a2() {
+//   // Here myVar2 (local) is 2
+
+//   var myVar2 = 5 - 3;
+
+//   alert("Q2 | a: " + myVar2);
+// }
+
+// a2();
