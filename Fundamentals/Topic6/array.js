@@ -99,3 +99,43 @@ console.log(arr[2]);
 console.log(arr[3]);
 console.log(arr[4]);
 console.log(arr[5]);
+
+var myVar2 = 1;
+
+// function a2() {
+//   b2(myVar2); //?
+
+//   // Here myVar2 (global) is 2
+//   myVar2 = 5 - 3;
+
+//   c2(myVar2);
+
+//   alert("Q2 | a: " + myVar2);
+// }
+
+// function b2(par1) {
+//   // Here we are making use of the "global" version of myVar2.
+//   // So the below alert message never "saw" the change.
+//   alert("Q2 | b: " + par1);
+// }
+
+// function c2(par2) {
+//   // Here we are making use of the "global" version of myVar2.
+//   // So the below alert message never "saw" the change.
+//   console.log("Q4 | c: " + par2);
+// }
+
+// a2();
+
+let placeholder;
+
+// //what happens here?
+console.log("This is outside the function: " + placeholder);
+
+scopeDemo("Jerome");
+
+function scopeDemo(myName) {
+  console.log("This is inside the function: " + myName);
+  //   var placeholder = myName;
+  placeholder = myName;
+}
