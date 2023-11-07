@@ -5,6 +5,8 @@
 
   --gray100: #c7c7c7;
   --gray200: #c4c4c4;
+  --gray250: #969696;
+  --gray300: #5c5c5c;
 
   --green100: #ecffda;
   --green200: #08d3bb;
@@ -15,6 +17,7 @@
 
   --blue50: #e8f4fa;
   --blue100: #dae6ff;
+  --blue150: rgba(16, 144, 203, 0.1);
   --blue200: #00329b;
 
   --orange100: #ffe5da;
