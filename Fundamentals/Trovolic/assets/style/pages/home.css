@@ -134,3 +134,62 @@
 .bg-service-purple {
   background-color: #efeaff;
 }
+
+/* ABOUT CARd */
+
+.about_card {
+  margin-bottom: 156px;
+}
+
+.about_title {
+  color: var(--textBlack);
+  text-align: center;
+  font-size: 33px;
+  font-weight: 600;
+  line-height: 52.8px;
+  /* margin-bottom: 31px; */
+}
+
+.about_desc {
+  color: #868686;
+  font-size: 18px;
+  text-align: center;
+  font-weight: 400;
+  line-height: 31.5px;
+  margin-bottom: 81px;
+  margin: 31px 0 81px 0;
+}
+
+.about_card_title {
+  color: var(--textBlack);
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 51px;
+  margin-bottom: 56px;
+}
+
+.about_card_desc {
+  color: var(--gray50);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 27.2px;
+}
+
+.about_sub_info_card {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+
+  margin-bottom: 43px;
+}
+
+.icon_happy {
+  width: 58px;
+  height: 58px;
+  background-color: var(--green200);
+  border-radius: 30px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
