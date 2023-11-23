@@ -8,9 +8,9 @@
 var B = function () {};
 
 //? Example 1
-// var B = (a, b) => {
-//   return a + b;
-// };
+var B = (a, b) => {
+  return a + b;
+};
 
 //? Example 2
 // var B = a => {
@@ -32,8 +32,7 @@ var B = function () {};
 // var B = (a, b) => a + b;
 
 //? Example 5
-// var B = (a, b) =>(
-//   `
+// var B = (a, b) =>(`
 // <li>${a} ${b}</li>
 
 // `);

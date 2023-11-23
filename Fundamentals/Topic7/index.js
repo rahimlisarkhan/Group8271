@@ -1,9 +1,4 @@
-// const personal = ["John", 33, true, [1, 2], function () {}];
-
-// const persona2 = ["Marry", 33, false];
-
-//? JSON - JS Object National
-// const movie = {
+// const myObj = {
 //   age: 33,
 //   isMarried: true,
 //   bornIn: 1985,
@@ -27,70 +22,239 @@
 //       name: "Test2",
 //     },
 //   ],
+//   news_link: ["link1", "link2", "link3"],
+//   poster: null,
+
+//   wife: {
+//     name: "Marry",
+//     surname: "Doe",
+//     "position-job": "Developer",
+//     10: 1999,
+//   },
 // };
 
-// console.log(movie.currentCity.name);
-// // console.log(movie.currentCity["name"]);
-// console.log("movie", movie.actors[1].name);
+// console.log(myObj.wife.name);
+// console.log(myObj.wife["name"]);
+// // console.log(myObj.wife["position-job"]);
 
-// console.log(student.currentCity.address.name);
+// console.log(myObj.wife[10]); //? 1999
+// console.log(myObj.news_link[2]);
 
-// const city = student.currentCity.name;
+const cardList = document.querySelector("#cardList");
 
-// console.log(student.actors[0].name);
+const data = [
+  {
+    age: 33,
+    isMarried: true,
+    bornIn: 1985,
+    fullname: "John",
+    signInJobYears: [2000, 2003, 2008],
+    "position-job": "Developer",
+    currentCity: {
+      name: "Toronto",
+      lat: 20.3434343,
+      lng: 40.3434343,
+      country: "Canada",
+      address: {
+        name: "Test6",
+      },
+    },
+    actors: [
+      {
+        name: "Test1",
+      },
+      {
+        name: "Test2",
+      },
+    ],
+    news_link: ["link1", "link2", "link3"],
+    poster: null,
 
-// console.log(window.location.protocol);
-
-// console.log(student.fullname);
-// console.log(student.fullname);
-// console.log(student["bornIn"]);
-// console.log(student["position-job"]);
-
-// console.log(personal[0]);
-
-const car = {
-  marka: "BMW",
-  model: "X6",
-  year: 2006,
-  speed: 0,
-
-  start: function (s = 0) {
-    // console.log(this);
-
-    this.speed += 10;
-
-    console.log("start", this.speed);
-
-    // console.log("Start", s);
-    // console.log("Start", s);
+    wife: {
+      name: "Marry",
+      surname: "Doe",
+      "position-job": "Developer",
+      10: 1999,
+    },
   },
+  {
+    age: 33,
+    isMarried: true,
+    bornIn: 1985,
+    fullname: "Marry",
+    signInJobYears: [2000, 2003, 2008],
+    "position-job": "Developer",
+    currentCity: {
+      name: "Toronto",
+      lat: 20.3434343,
+      lng: 40.3434343,
+      country: "Canada",
+      address: {
+        name: "Test6",
+      },
+    },
+    actors: [
+      {
+        name: "Test1",
+      },
+      {
+        name: "Test2",
+      },
+    ],
+    news_link: ["link1", "link2", "link3"],
+    poster: null,
 
-  monitor: function () {
-    console.log(`Marka: ${this.marka}, Model: ${this.model}`);
+    wife: {
+      name: "Marry",
+      surname: "Doe",
+      "position-job": "Developer",
+      10: 1999,
+    },
   },
+  {
+    age: 33,
+    isMarried: true,
+    bornIn: 1985,
+    fullname: "Anar",
+    signInJobYears: [2000, 2003, 2008],
+    "position-job": "Developer",
+    currentCity: {
+      name: "Toronto",
+      lat: 20.3434343,
+      lng: 40.3434343,
+      country: "Canada",
+      address: {
+        name: "Test6",
+      },
+    },
+    actors: [
+      {
+        name: "Test1",
+      },
+      {
+        name: "Test2",
+      },
+    ],
+    news_link: ["link1", "link2", "link3"],
+    poster: null,
 
-  stop: function () {
-    this.speed -= 10;
-
-    console.log("start", this.speed);
-    console.log("Stop");
+    wife: {
+      name: "Marry",
+      surname: "Doe",
+      "position-job": "Developer",
+      10: 1999,
+    },
   },
-};
+  {
+    age: 33,
+    isMarried: true,
+    bornIn: 1985,
+    fullname: "Sevinc",
+    signInJobYears: [2000, 2003, 2008],
+    "position-job": "Developer",
+    currentCity: {
+      name: "Toronto",
+      lat: 20.3434343,
+      lng: 40.3434343,
+      country: "Canada",
+      address: {
+        name: "Test6",
+      },
+    },
+    actors: [
+      {
+        name: "Test1",
+      },
+      {
+        name: "Test2",
+      },
+    ],
+    news_link: ["link1", "link2", "link3"],
+    poster: null,
 
-car.start();
-car.start();
+    wife: {
+      name: "Marry",
+      surname: "Doe",
+      "position-job": "Developer",
+      10: 1999,
+    },
+  },
+  {
+    age: 33,
+    isMarried: true,
+    bornIn: 1985,
+    fullname: "Cingiz",
+    signInJobYears: [2000, 2003, 2008],
+    "position-job": "Developer",
+    currentCity: {
+      name: "Toronto",
+      lat: 20.3434343,
+      lng: 40.3434343,
+      country: "Canada",
+      address: {
+        name: "Test6",
+      },
+    },
+    actors: [
+      {
+        name: "Test1",
+      },
+      {
+        name: "Test2",
+      },
+    ],
+    news_link: ["link1", "link2", "link3"],
+    poster: null,
 
-car.stop();
+    wife: {
+      name: "Marry",
+      surname: "Doe",
+      "position-job": "Developer",
+      10: 1999,
+    },
+  },
+];
 
-car.monitor();
+const newContentData = data
+  .map((item) => {
+    console.log("item:", item);
+    return `
+  <div class="card">
+  <img
+    width="200"
+    class="img-fluid"
+    src="${item.img}"
+    alt=""
+  />
+  <div class="card-body">
+    <h5 class="card-title">${item.fullname}</h5>
+    <p class="card-text">${item.currentCity.name}</p>
+  </div>
+</div>
+  `;
+  })
+  .join("");
 
-console.log(car);
+// console.log("newContentData", newContentData);
 
-// const date = new Date()
+cardList.innerHTML = newContentData;
 
-// date.
+// const numbers = [1, 4, 5, 6, 7];
 
-// Math.max(5, 44);
+// const newList = ["<li>1</li>", "<li>4</li>", "<li>5</li>"].join();
 
-// el.innerHtml = myobj.city.address.name
-// el2.innerHtml = myobj.position
+for (let person of data) {
+  console.log("-----------");
+  console.log(person.fullname);
+
+  // console.log("Fullname:", person.fullname);
+  // console.log("Age:", person.age);
+  // console.log("Live:", person.currentCity.name);
+  console.log("-----------");
+}
+
+console.log(cardList);
+
+// const list = [34, 54, 657, "string", { name: "John" }];
+
+// list[3].toLowerCase();
