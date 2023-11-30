@@ -118,7 +118,7 @@
 // const secondMyObj = {
 //   age: 27,
 
-//   foo: function () {
+//?   foo: function () {
 //     console.log("this:", this);
 
 //     const B = () => {
@@ -159,33 +159,33 @@
 // }
 // myFunction();
 
-// var someObj = {
-//   fullname: "Red Hat",
+var someObj = {
+  fullname: "Red Hat",
 
-//   say: function () {
-//     console.log("say:", this);
+  say: function () {
+    console.log("say:", this);
 
-//     const kenardakiThis = this;
+    const kenardakiThis = this;
 
-//     function bar() {
-//       console.log("bar", kenardakiThis);
-//     }
+    function bar() {
+      console.log("bar", kenardakiThis);
+    }
 
-//     bar();
-//   },
+    bar();
+  },
 
-//   say: function () {
-//     console.log("say:", this);
+  // say: function () {
+  //   console.log("say:", this);
 
-//     const bar = () => {
-//       console.log("bar", this);
-//     };
+  //   const bar = () => {
+  //     console.log("bar", this);
+  //   };
 
-//     bar();
-//   },
-// };
+  //   bar();
+  // },
+};
 
-// someObj.say();
+someObj.say();
 
 // var myObj = {
 //   name: "",
@@ -213,7 +213,7 @@
 //   yell: function () {
 //     this.name = "Star Powerup";
 
-//     var changeName = (newName) => {
+//     var changeName = function () {
 //       console.log("changeName this", this);
 
 //       this.name = newName;
@@ -227,8 +227,8 @@
 
 // myObj.yell();
 
-let firstName = "John";
-let lastName = "Doe";
+// var firstName = "John";
+// var lastName = "Doe";
 
 // console.log(this.firstName);
 

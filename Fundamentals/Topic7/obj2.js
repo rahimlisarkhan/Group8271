@@ -3,31 +3,31 @@
 // const persona2 = ["Marry", 33, false];
 
 //? JSON - JS Object National
-// const movie = {
-//   age: 33,
-//   isMarried: true,
-//   bornIn: 1985,
-//   fullname: "John",
-//   signInJobYears: [2000, 2003, 2008],
-//   "position-job": "Developer",
-//   currentCity: {
-//     name: "Toronto",
-//     lat: 20.3434343,
-//     lng: 40.3434343,
-//     country: "Canada",
-//     address: {
-//       name: "Test6",
-//     },
-//   },
-//   actors: [
-//     {
-//       name: "Test1",
-//     },
-//     {
-//       name: "Test2",
-//     },
-//   ],
-// };
+const movie = {
+  age: 33,
+  isMarried: true,
+  bornIn: 1985,
+  fullname: "John",
+  signInJobYears: [2000, 2003, 2008],
+  "position-job": "Developer",
+  currentCity: {
+    name: "Toronto",
+    lat: 20.3434343,
+    lng: 40.3434343,
+    country: "Canada",
+    address: {
+      name: "Test6",
+    },
+  },
+  actors: [
+    {
+      name: "Test1",
+    },
+    {
+      name: "Test2",
+    },
+  ],
+};
 
 // console.log(movie.currentCity.name);
 // // console.log(movie.currentCity["name"]);
