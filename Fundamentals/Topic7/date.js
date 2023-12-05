@@ -101,3 +101,17 @@ const date = new Date();
 
 document.querySelector("#showTime").innerHTML =
   date.getHours() + ":" + date.getMinutes();
+
+const obj1 = {
+  fullname: "John Doe",
+  age: 22,
+
+  monitor() {
+    console.log("this is", this.fullname + " " + this.age);
+  },
+};
+
+const obj2 = {
+  fullname: "Marry Perry",
+  age: 28,
+};

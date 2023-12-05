@@ -22,7 +22,7 @@
 
 // karamelliTort.monitor();
 
-// const chTort = new TortResepti("Choco", 400, 200, 4);
+const chTort = new TortResepti("Choco", 400, 200, 4);
 
 // console.log(karamelliTort);
 
