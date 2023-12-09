@@ -20,13 +20,18 @@ const listTable = document.querySelector("#list");
 //   console.log(balance);
 // }
 
-const bankAcount = {
-  balance: 0,
-  limit: 1000,
-  hesabat: [],
-  date: new Date(),
+class BankAcount {
+  balance = 0;
+  limit = 0;
+  hesabat = [];
+  date = new Date();
 
-  artir: function (m) {
+  constructor(verBalance = 0, verLimit = 0) {
+    this.balance = verBalance;
+    this.limit = verLimit;
+  }
+
+  artir(m) {
     if (this.balance >= this.limit || m <= 0 || !m) {
       console.log("Invalid");
       return;
@@ -43,9 +48,9 @@ const bankAcount = {
     this.hesabat.push(history);
 
     return this.balance;
-  },
+  }
 
-  xercle: function (m) {
+  xercle(m) {
     const checkValid = () => {
       if (this.balance <= 0) {
         console.log("invalid balance");
@@ -66,9 +71,9 @@ const bankAcount = {
     checkValid();
 
     return this.balance;
-  },
+  }
 
-  show: function (m) {
+  show(m) {
     const thisObj = this;
 
     function handleMonitor() {
@@ -79,8 +84,74 @@ const bankAcount = {
     handleMonitor();
 
     return this.balance;
-  },
-};
+  }
+}
+
+const bankAcount = new BankAcount(100, 2000);
+
+const bankAcount2 = new BankAcount(10, 10000);
+
+//  {
+//   balance: 0,
+//   limit: 1000,
+//   hesabat: [],
+//   date: new Date(),
+
+//   artir: function (m) {
+//     if (this.balance >= this.limit || m <= 0 || !m) {
+//       console.log("Invalid");
+//       return;
+//     }
+
+//     this.balance += m;
+
+//     const history = {
+//       type: "Cash",
+//       amount: m,
+//       created: this.date,
+//     };
+
+//     this.hesabat.push(history);
+
+//     return this.balance;
+//   },
+
+//   xercle: function (m) {
+//     const checkValid = () => {
+//       if (this.balance <= 0) {
+//         console.log("invalid balance");
+//         return;
+//       }
+
+//       this.balance -= m;
+
+//       const history = {
+//         type: "Withdraw",
+//         amount: m,
+//         created: this.date,
+//       };
+
+//       this.hesabat.push(history);
+//     };
+
+//     checkValid();
+
+//     return this.balance;
+//   },
+
+//   show: function (m) {
+//     const thisObj = this;
+
+//     function handleMonitor() {
+//       console.log(thisObj.balance);
+//       console.log(thisObj.hesabat);
+//     }
+
+//     handleMonitor();
+
+//     return this.balance;
+//   },
+// };
 
 incrementBtn.addEventListener("click", function () {
   const value = moneyInput.value;

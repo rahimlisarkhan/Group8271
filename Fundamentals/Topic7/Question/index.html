@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Question Class</h1>
+    <script>
+      const questions = [{ name: "1+1 cavabi nedir" }, { name: "10/2 nedir" }];
+
+      class QuestionGame {
+        #questions = [];
+        #points = 0;
+        #nextQuestionIndex = -1;
+        game_name = "";
+
+        constructor(g_name, questions) {
+          this.game_name = g_name;
+          this.#questions = questions;
+        }
+
+        get game_questions() {
+          return this.#questions;
+        }
+
+        set game_questions(qArr) {
+          if (qArr.length > 0) {
+            this.#questions = qArr;
+          }
+        }
+
+        nextChangeQ() {
+          //   this.#nextQuestionIndex =
+          //     this.#questions.length - 1 !== this.#nextQuestionIndex
+          //       ? this.#nextQuestionIndex + 1
+          //       : 0;
+
+          this.#nextQuestionIndex += 1;
+
+          return this.#questions[this.#nextQuestionIndex];
+        }
+      }
+
+      class MathQuestions extends QuestionGame {
+        constructor(g_name, questions, fullname) {
+          super(g_name, questions);
+
+          this.fullname = fullname;
+        }
+
+        showQuestions() {
+          const result = this.nextChangeQ();
+          //   const result = super.nextChangeQ();
+          return result;
+          console.log("Novbeti sual:", result.name);
+        }
+      }
+
+      const buildMathGame = new MathQuestions("Qazan", questions, "John Doe");
+
+      //   buildMathGame.game_questions = [];
+
+      buildMathGame.showQuestions();
+      buildMathGame.showQuestions();
+
+      //   console.log(buildMathGame);
+    </script>
+  </body>
+</html>

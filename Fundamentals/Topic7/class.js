@@ -1,22 +1,22 @@
 // // const date = new Date();
 
-// class TortResepti {
-//   un = null;
-//   seker = 0;
-//   yumurta = 0;
-//   name = null;
+class TortResepti {
+  un = null;
+  seker = 0;
+  yumurta = 0;
+  name = null;
 
-//   constructor(verilenAd, verilenUn, verilenSeker, verilenYumurta) {
-//     this.name = verilenAd;
-//     this.un = verilenUn;
-//     this.seker = verilenSeker;
-//     this.yumurta = verilenYumurta;
-//   }
+  constructor(verilenAd, verilenUn, verilenSeker, verilenYumurta) {
+    this.name = verilenAd;
+    this.un = verilenUn;
+    this.seker = verilenSeker;
+    this.yumurta = verilenYumurta;
+  }
 
-//   monitor(a) {
-//     console.log(this.un, this.seker);
-//   }
-// }
+  monitor(a) {
+    console.log(this.un, this.seker);
+  }
+}
 
 // const karamelliTort = new TortResepti("Karamel", 300, 100, 6);
 
@@ -24,6 +24,8 @@
 
 const chTort = new TortResepti("Choco", 400, 200, 4);
 
+chTort.monitor()
+// chTort.getNameOfEmployee()
 // console.log(karamelliTort);
 
 // chTort.monitor();
