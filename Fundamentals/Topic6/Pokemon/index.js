@@ -102,3 +102,31 @@ window.addEventListener("keypress", function (e) {
     alert("Duzgun herf sec: bunlar olmalidir: e f w");
   }
 });
+
+// const tag = {
+//   inner: "",
+// };
+
+// tag.inner = "Test";
+
+// const arr = [12, 3, 4];
+
+// const fullname = "John Doe";
+
+// // arr.every()
+
+// console.log(typeof arr); //? object
+
+// const result = Math.ceil()
+
+class MMC {}
+
+class AZZA extends MMC {}
+
+class SkalatliTort extends AZZA {}
+
+const hazirTort = new SkalatliTort();
+
+// const firebase = new Firebase()
+
+// const a = firebase.fcm()
