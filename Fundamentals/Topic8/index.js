@@ -172,20 +172,22 @@
 
 // window.onkeydown = isGoren;
 
-const resultVer = (num, callback) => {
-  const netice = num * 2;
+// const resultVer = (num, callback) => {
+//   const netice = num * 2;
 
-  const sentence = `Result: ${netice}`;
+//   const sentence = `Result: ${netice}`;
 
-  callback(sentence);
-};
+//   callback(sentence);
+// };
 
-resultVer(100, show);
+// resultVer(100, show);
 
-const show = (str) => {
-  console.log("str", str);
-};
+// // const show = (str) => {
+// //   console.log("str", str);
+// // };
 
 // function show(str) {
 //   console.log("str", str);
 // }
+
+a = 1;
