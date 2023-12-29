@@ -9,25 +9,33 @@
       rel="stylesheet"
     />
   </head>
-  <body class="p-5">
-    <h1>Topic8</h1>
+  <body class="p-5 bg-dark">
+    <div class="p-5">
+      <input
+        class="form-control form-control-lg"
+        id="searchInput"
+        placeholder="Search movie..."
+      />
+      <button class="btn btn-danger my-3 w-100" id="searchBtn">Search</button>
 
-    <h2 id="progressLevel">Level:</h2>
-    <div
-      class="progress bg-dark"
-      role="progressbar"
-      aria-label="Basic example"
-      aria-valuenow="75"
-      aria-valuemin="0"
-      aria-valuemax="100"
-    >
-      <div
-        class="progress-bar bg-danger"
-        id="progresLine"
-        style="width: 45%"
-      ></div>
+      <div class="card">
+        <img
+          src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+          class="card-img-top object-fit-cover"
+          style="height: 400px"
+          alt="..."
+          id="movieImg"
+        />
+        <div class="card-body">
+          <h5 class="card-title" id="movieTitle">Card title</h5>
+          <h6 class="card-subtitle mb-2 text-muted" id="movieSubTitle">
+            Card subtitle
+          </h6>
+          <p class="card-text" id="movieDesc"></p>
+        </div>
+      </div>
     </div>
 
-    <script src="./promise.js"></script>
+    <script src="./fetch.js"></script>
   </body>
 </html>
