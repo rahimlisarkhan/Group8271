@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/weather-icons/2.0.10/css/weather-icons.min.css"
+    />
+  </head>
+  <body class="p-5 bg-dark">
+    <div class="p-5">
+      <input
+        class="form-control form-control-lg"
+        id="searchInput"
+        placeholder="Search city..."
+      />
+      <button class="btn btn-success my-3 w-100" id="searchBtn">Search</button>
+
+      <div class="card">
+        <img
+          src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+          class="card-img-top"
+          alt="..."
+          id="movieImg"
+        />
+        <div class="card-body">
+          <h5 class="card-title h3" id="movieTitle">loading...</h5>
+          <h6 class="card-subtitle mb-2 text-muted h1" id="movieSubTitle">
+            loading...
+          </h6>
+          <p class="card-text h1" id="movieDesc"></p>
+        </div>
+      </div>
+    </div>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
