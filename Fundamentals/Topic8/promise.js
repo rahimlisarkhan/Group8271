@@ -53,25 +53,43 @@
 
 // const myPromise = new Promise();
 
-const myPromise = navigator.getBattery(); //? new Promise(fucntion)
+// const myPromise = navigator.getBattery(); //? new Promise(fucntion)
 
-console.log("myPromise", myPromise);
+// console.log("myPromise", myPromise);
 
-myPromise
-  .then(function (data) {
-    console.log("data", data);
+// myPromise
+//   .then(function (data) {
+//     console.log("data", data);
 
-    const battery = data.level * 100;
+//     const battery = data.level * 100;
 
-    const progressLevel = document.querySelector("#progressLevel");
-    const progresLine = document.querySelector("#progresLine");
+//     const progressLevel = document.querySelector("#progressLevel");
+//     const progresLine = document.querySelector("#progresLine");
 
-    progressLevel.innerHTML = `Your battery: ${battery}%`;
-    progresLine.style.width = ` ${battery}%`;
-  })
-  .catch(function (err) {
-    console.log("err", err);
-  })
-  .finally(function () {
-    alert("Hesablandi....");
-  });
+//     progressLevel.innerHTML = `Your battery: ${battery}%`;
+//     progresLine.style.width = ` ${battery}%`;
+//   })
+//   .catch(function (err) {
+//     console.log("err", err);
+//   })
+//   .finally(function () {
+//     alert("Hesablandi....");
+//   });
+
+async function getBatteryLevel() {
+  const data = await navigator.getBattery(); //? bu navigator.getBattery() hisse size promise qaytarir;
+
+  const battery = data.level * 100;
+
+  const progressLevel = document.querySelector("#progressLevel");
+  const progresLine = document.querySelector("#progresLine");
+
+  progressLevel.innerHTML = `Your battery: ${battery}%`;
+  progresLine.style.width = ` ${battery}%`;
+}
+
+getBatteryLevel();
+
+// fetch()
+
+// axios()

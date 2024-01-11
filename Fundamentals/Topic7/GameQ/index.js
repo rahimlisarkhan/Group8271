@@ -100,5 +100,7 @@ function selectItem(userChoose) {
     //? hemin dom bg-danger edir
   }
 
-  startGame();
+  // startGame();
+
+  setTimeout(startGame, 2000);
 }

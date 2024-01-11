@@ -12,54 +12,42 @@ const movieTitle = document.querySelector("#movieTitle");
 const movieSubTitle = document.querySelector("#movieSubTitle");
 const movieDesc = document.querySelector("#movieDesc");
 
+// const myPromise = new Promise(function (res, rej) {
+//   if (car.length > 0) {
+//     res();
+//   } else {
+//     rej();
+//   }
+// });
+
 // // myPromise.
 
-searchBtn.addEventListener("click", async function () {
+searchBtn.addEventListener("click", function () {
   const title = searchInput.value;
-  //?  ------
 
-  const data = await getSearchCityWheather(title);
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=${title}&units=metric&appid=c17bc3b039b1b73de4e0175c6792ff96`;
 
-  console.log(data);
+  const firstPromiseMethodlariolanObyekt = fetch(url);
 
-  // ekrandaHavaMelumatinGoster(data);
+  firstPromiseMethodlariolanObyekt
+    .then((res) => {
+      console.log("res", res);
 
-  // let url = `https://api.openweathermap.org/data/2.5/weather?q=${title}&units=metric&appid=c17bc3b039b1b73de4e0175c6792ff96`;
+      const secondPromiseMthodlariolanObyekt = res.json();
 
-  // const firstPromiseMethodlariolanObyekt = fetch(url);
+      return secondPromiseMthodlariolanObyekt;
+    })
+    .then((data) => {
+      console.log("data", data);
 
-  // firstPromiseMethodlariolanObyekt
-  //   .then((res) => {
-  //     console.log("res", res);
+      ekrandaHavaMelumatinGoster(data);
+    })
+    .catch((err) => {});
 
-  //     const secondPromiseMthodlariolanObyekt = res.json();
-
-  //     return secondPromiseMthodlariolanObyekt;
-  //   })
-  //   .then((data) => {
-  //     console.log("data", data);
-
-  //     ekrandaHavaMelumatinGoster(data);
-  //   });
-
-  //?  ------
+  //?... your logic
 
   searchInput.value = "";
 });
-
-async function getSearchCityWheather(city) {
-  try {
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=c17bc3b039b1b73de4e0175c6792ff96`;
-
-    const response = await fetch(url);
-
-    const data = await response.json();
-
-    return data;
-  } catch (err) {
-    console.log("err", err);
-  }
-}
 
 function ekrandaHavaMelumatinGoster(havaMelumati) {
   const newTemp = Math.round(havaMelumati.main.temp);
