@@ -3,11 +3,16 @@ const postTitle = document.querySelector("#postTitle");
 const postDesc = document.querySelector("#postDesc");
 const postBtn = document.querySelector("#postBtn");
 
+const loadingSpinner = document.querySelector("#loadingSpinner");
+
+// let loadingCrtPost = false
+
 let data = [];
 
 //? API'S
 async function getPosts() {
   try {
+    //? 200-400 Status + JS code
     const response = await fetch("https://blog-api-t6u0.onrender.com/posts", {
       method: "GET",
       headers: {
@@ -24,25 +29,31 @@ async function getPosts() {
 }
 
 async function getPostID(id) {
-  const options = {
-    method: "GET",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  };
+  try {
+    const options = {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
 
-  const response = await fetch(
-    `https://blog-api-t6u0.onrender.com/posts/${id}`,
-    options
-  );
+    const response = await fetch(
+      `https://blog-api-t6u0.onrender.com/posts/${id}`,
+      options
+    );
 
-  const data = await response.json();
+    const data = await response.json();
 
-  console.log("data:", data);
+    console.log("data:", data);
+  } catch (err) {
+    console.log("err", err);
+  }
 }
 
 async function createPost(form) {
   try {
+    // el.style.display = "none";
+
     const options = {
       method: "POST",
       headers: {
@@ -60,7 +71,7 @@ async function createPost(form) {
 
     return data;
   } catch (err) {
-    console.log("err", err);
+    // el.style.display = "block";
   }
 }
 
@@ -84,28 +95,36 @@ async function uptPost(id, form) {
 }
 
 async function rmvPost(id) {
-  const options = {
-    method: "DELETE",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  };
+  try {
+    const options = {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
 
-  const response = await fetch(
-    `https://blog-api-t6u0.onrender.com/posts/${id}`,
-    options
-  );
+    const response = await fetch(
+      `https://blog-api-t6u0.onrender.com/posts/${id}`,
+      options
+    );
 
-  const data = await response.json();
+    const data = await response.json();
 
-  console.log("data:", data);
+    // console.log("data:", data);
+
+    return data;
+  } catch (err) {
+    console.log("err", err);
+  }
 }
 
 //? GENERAL
 function renderElements(data) {
   postList.innerHTML = data
-    .map(
-      (post) => `
+    .map((post, index) => {
+      if (index < 101) return null;
+
+      return `
     <div class="card">
     <img
       src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
@@ -118,29 +137,70 @@ function renderElements(data) {
       <p class="card-text">
         ${post.body}
       </p>
-      <button class="btn btn-danger btn-sm">Delete</button>
+      <button class="btn btn-danger btn-sm" onclick="handleRemoveEl(${post.id})">Delete</button>
     </div>
   </div>
-    `
-    )
+    `;
+    })
     .join("");
 }
 
 postBtn.addEventListener("click", async function () {
-  const title = postTitle.value;
-  const body = postDesc.value;
+  try {
+    // loadingCrtPost = true
 
-  const form = {
-    title,
-    body,
-  };
+    postBtn.setAttribute("disabled", "true");
+    loadingSpinner.classList.remove("d-none");
+    loadingSpinner.classList.add("d-block");
 
-  const tezePost = await createPost(form);
+    const title = postTitle.value;
+    const body = postDesc.value;
 
-  data = [tezePost, ...data];
+    if (!title.trim() || !body.trim()) {
+      alert("Xanalari duzgun doldurun");
+      return;
+    }
 
-  renderElements(data);
+    const form = {
+      title,
+      body,
+    };
+
+    const tezePost = await createPost(form);
+
+    data = [tezePost, ...data];
+
+    // App() sehf yanasmadi
+    renderElements(data);
+  } catch (err) {
+    console.log("err", err);
+
+    //? oz dom kodlarivi yazib modalivi aktiv edirsen err mesajina gore
+  } finally {
+    postBtn.removeAttribute("disabled");
+    loadingSpinner.classList.add("d-none");
+    loadingSpinner.classList.remove("d-block");
+  }
 });
+
+async function handleRemoveEl(id) {
+  try {
+    console.log("id", id);
+
+    // const removeEl = await rmvPost(id);
+    await rmvPost(id);
+
+    console.log("Ugurla silindi", id);
+
+    data = data.filter((post) => post.id !== id);
+
+    renderElements(data);
+
+    // App();
+  } catch (err) {
+    console.log("err", err);
+  }
+}
 
 async function App() {
   const posts = await getPosts();
