@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main>
+      <div class="row">
+        <div class="col-4 d-none" id="leftSidePanel">
+          <div
+            class="w-25 bg-dark position-fixed p-4 d-flex flex-column gap-3"
+            style="min-height: 100vh"
+          >
+            <h1 class="text-white h1 mb-3">Personal Form</h1>
+            <input
+              type="text"
+              class="form-control form-control-lg"
+              placeholder="Image url"
+              id="formUrl"
+            />
+            <input
+              type="text"
+              class="form-control form-control-lg"
+              placeholder="Fullname"
+              id="formFullname"
+            />
+            <input
+              type="text"
+              class="form-control form-control-lg"
+              placeholder="Position"
+              id="formPos"
+            />
+
+            <button class="btn btn-danger w-100 btn-lg mt-2" id="crtBtn">
+              Create
+            </button>
+          </div>
+        </div>
+        <div class="col-8">
+          <button class="btn btn-danger" id="menuBtn">toggle menu</button>
+          <div class="p-5 d-flex flex-wrap gap-4" id="cardList">
+            <!-- <div class="card" style="width: 12rem">
+              <img
+                src="https://images.unsplash.com/photo-1561154464-82e9adf32764?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60"
+                class="card-img-top"
+                alt="..."
+              />
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
