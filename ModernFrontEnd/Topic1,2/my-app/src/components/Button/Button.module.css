@@ -1,0 +1,42 @@
+.btn {
+  border-radius: 8px;
+  border: none;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.danger {
+  background-color: red;
+  color: #fff;
+}
+
+.success {
+  background-color: green;
+  color: #fff;
+}
+
+.warning {
+  background-color: orange;
+  color: #fff;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.btn:disabled {
+  opacity: 0.3;
+  cursor: auto;
+}
+
+.sm {
+  padding: 4px 10px;
+}
+
+.md {
+  padding: 6px 12px;
+}
+
+.lg {
+  padding: 8px 20px;
+}
