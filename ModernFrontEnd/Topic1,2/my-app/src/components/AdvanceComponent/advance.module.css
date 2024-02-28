@@ -1,0 +1,9 @@
+.danger {
+  background-color: red;
+  color: white;
+}
+
+.warning {
+  background-color: orange;
+  color: black;
+}

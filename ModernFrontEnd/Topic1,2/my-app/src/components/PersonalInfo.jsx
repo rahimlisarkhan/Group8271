@@ -2,6 +2,7 @@ import React from "react";
 import PersonalDesc from "./PersonalDesc";
 import { totalCount } from "../utils/totalCount";
 
+//? Pure Component
 function PersonalInfo({
   address,
   title,

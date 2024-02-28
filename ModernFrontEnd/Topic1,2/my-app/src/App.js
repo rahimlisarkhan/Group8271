@@ -1,21 +1,57 @@
+import { useState } from "react";
 import Navbar from "./Navbar";
+import AdvanceComponent from "./components/AdvanceComponent";
 import Button from "./components/Button";
+import ContactUs from "./components/ContactUs";
+import Form from "./components/ContactUs/Form";
+import EventsComponent from "./components/EventsComponent";
 import Info from "./components/Info";
+import ParentCallback from "./components/ParentCallback/ParentCallback";
 // import AboutUs from "./components/AboutUs";
 // import Contact from "./components/Contact";
 import PersonalInfo from "./components/PersonalInfo";
+import Employees from "./components/Employees";
 
 const teammembers = ["Hikmet", "Siri", "Ayaz", "Nezife"];
 
 function App() {
+  const [employees, setEmployees] = useState([]);
+
+  const handlePersonal = (personal) => {
+    console.log("personal", personal);
+
+    const newData = [...employees, personal];
+    setEmployees(newData);
+  };
+
+  console.log("employees", employees);
+
   return (
     <div className="App">
       <header className="App-header">
-        <Info>
+        <div>
+          <Form onSubmit={handlePersonal} />
+
+          <Employees list={employees} />
+        </div>
+
+        {/* <ContactUs /> */}
+
+        {/* <ParentCallback /> */}
+        {/* <EventsComponent /> */}
+        {/* <AdvanceComponent /> */}
+
+        {/* <Info>
           <Navbar />
         </Info>
 
-        <Button color="warning" disabled>
+        <Info>Sirrus</Info>
+
+        <Info>
+          <div>Salam</div>
+        </Info> */}
+
+        {/* <Button color="warning" disabled>
           Warning
         </Button>
         <Button color="danger" size="sm" disabled={true}>
@@ -23,12 +59,12 @@ function App() {
         </Button>
         <Button color="success" size="lg" disabled>
           Created
-        </Button>
+        </Button> */}
 
         {/* <AboutUs />
         <Contact /> */}
 
-        <PersonalInfo
+        {/* <PersonalInfo
           color="red"
           title="Seymur"
           salary={3000}
@@ -49,7 +85,7 @@ function App() {
           married={true}
           desc="Lorem ipsum ipsum"
           members={teammembers}
-        />
+        /> */}
       </header>
     </div>
   );

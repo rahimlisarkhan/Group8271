@@ -1,0 +1,12 @@
+.input {
+  border-radius: 8px;
+  border: none;
+  background-color: aliceblue;
+  font-size: 18px;
+  padding: 8px 12px;
+}
+
+.input:focus {
+  border-color: red;
+  outline-color: red;
+}
