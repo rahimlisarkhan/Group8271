@@ -5,6 +5,8 @@ import { Button } from "react-bootstrap";
 
 import * as Yup from "yup";
 
+import pokemon1 from "../../assets/react.svg";
+
 const SignupSchema = Yup.object().shape({
   firstName: Yup.string()
     .min(2, "Too Short!")
@@ -42,6 +44,8 @@ function Form() {
 
   return (
     <form onSubmit={formik.handleSubmit}>
+      <img src={Image1} />
+
       <input
         name="firstName"
         onChange={formik.handleChange}

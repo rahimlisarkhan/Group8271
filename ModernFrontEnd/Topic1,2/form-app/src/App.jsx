@@ -9,11 +9,15 @@ import Card from "./components/Card";
 import ProductCard from "./components/ProductCard";
 import { Alert } from "react-bootstrap";
 import Form from "./components/Form";
+import Coins from "./components/Coins";
+import Todo from "./components/Todo";
 
 function App() {
   return (
     <div>
-      <Form />
+      <Todo />
+      {/* <Coins /> */}
+      {/* <Form /> */}
     </div>
   );
 }
