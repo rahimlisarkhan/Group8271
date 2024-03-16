@@ -1,0 +1,8 @@
+.content {
+  width: 300px;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+}
