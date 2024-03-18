@@ -1,0 +1,8 @@
+.item {
+  padding: 10px 16px;
+  cursor: pointer;
+}
+
+.active {
+  background-color: rgb(6, 166, 166);
+}

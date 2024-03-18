@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.left {
+  flex: 2;
+  background-color: teal;
+  padding: 20px;
+}
+
+.right {
+  flex: 8;
+  color: #000;
+  background-color: #fff;
+  padding: 20px;
+}
+
+.content {
+  min-height: 100vh;
+  border-radius: 10px;
+  border: 2px solid rgba(128, 128, 128, 0.44);
+  padding: 20px;
+}

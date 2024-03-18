@@ -13,7 +13,12 @@ function Navbar() {
         <li onClick={() => navigate("/about")}>About</li>
         <li onClick={() => navigate("/contact")}>Contact</li>
         <li onClick={() => navigate("/blog")}>Blog</li>
+        <li onClick={() => navigate("/setting")}>Setting</li>
       </ul>
+
+      <button onClick={() => navigate("/movies")}>Get Started Movies</button>
+
+      <hr />
     </nav>
   );
 }
