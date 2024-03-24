@@ -2,11 +2,14 @@ import React, { useState } from "react";
 import { useEffect, useCallback, useMemo } from "react";
 import Navbar from "../../components/Navbar";
 import { Checkbox } from "../../components/CheckBox";
+import { useTitle } from "../../hooks/useTitle";
 
 // const arr = [1, 2, 34, 5];
 
 function About(props) {
   // const  {push} = useRouter()
+
+  useTitle("About Seymur");
 
   const [state, setState] = useState(0);
   const [state2, setState2] = useState(0);
@@ -19,14 +22,6 @@ function About(props) {
   // const arr = useMemo(() => {
   //   return [1, 2, 34, 5, state];
   // }, []);
-
-  useEffect(() => {
-    document.title = "About Sehifesi";
-
-    return () => {
-      console.log("About cixdi...");
-    };
-  }, []);
 
   const handleCount = () => {
     setState((prev) => prev + 1);
