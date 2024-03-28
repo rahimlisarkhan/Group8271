@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=\, initial-scale=1.0" />
+    <title>E-Book App</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link href="../styles/global.css" rel="stylesheet" />
+
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand fw-bold" href="../../index.html">Clever </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarID"
+          aria-controls="navbarID"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarID">
+          <div class="navbar-nav">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </div>
+          <div class="navbar-nav">
+            <a class="nav-link active" aria-current="page" href="#"
+              >Favorite
+
+              <span class="badge text-bg-warning">4</span>
+            </a>
+          </div>
+          <!-- <a class="btn bg-main text-white">Create Your Book</a> -->
+        </div>
+      </div>
+    </nav>
+
+    <!-- Info -->
+    <div class="position-relative">
+      <img
+        class="img-fluid w-100"
+        src="https://www.eui.eu/Content-Types-Assets/Web-Unit/Student-in-law-library-section.x7622d211.jpg?w=1920&h=1080"
+      />
+      <div
+        class="position-absolute top-0 left-0 w-100 h-100 bg-main-50 d-flex flex-column justify-content-center align-items-center gap-4"
+      >
+        <h2 class="fw-bold display-2 text-light">
+          Create your book for platform
+        </h2>
+      </div>
+    </div>
+
+    <!-- Products -->
+    <main class="container">
+      <form class="my-5">
+        <div
+          class="alert alert-danger bg-main-50 text-light d-none"
+          role="alert"
+        >
+          A simple primary alert—check it out!
+        </div>
+
+        <div class="alert alert-danger d-none" role="alert">
+          A simple primary alert—check it out!
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label">Title</label>
+          <input class="form-control" id="bookTitle" />
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label"
+            >Author</label
+          >
+          <input class="form-control" id="bookAuthor" />
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlInput1" class="form-label"
+            >Image url</label
+          >
+          <input class="form-control" id="bookUrl" />
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlTextarea1" class="form-label"
+            >Description</label
+          >
+          <textarea class="form-control" id="bookDesc" rows="3"></textarea>
+        </div>
+
+        <button
+          class="btn bg-main btn-lg w-100 text-light mt-4"
+          id="bookCrtBtn"
+        >
+          Create
+        </button>
+      </form>
+    </main>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="../js/app.js" type="module"></script>
+  </body>
+</html>

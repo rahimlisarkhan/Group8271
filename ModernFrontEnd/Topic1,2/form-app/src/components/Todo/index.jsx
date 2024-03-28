@@ -24,6 +24,7 @@ function Todo() {
     //? ....
   }
   function updateTodo(id, todo) {
+    
     //? ....
   }
 
@@ -32,7 +33,7 @@ function Todo() {
   return (
     <>
       <TodoInput onData={addTodo} />
-      <TodoList list={todos} onRemove={rmvTodo} />
+      <TodoList list={todos} onRemove={rmvTodo}  />
     </>
   );
 }

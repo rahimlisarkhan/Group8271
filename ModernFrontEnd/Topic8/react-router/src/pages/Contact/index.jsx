@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import Navbar from "../../components/Navbar";
 import { useNavigate } from "react-router-dom";
 import ContactForm from "../../components/ContactForm";
+import ContactInfo from "../../components/ContactInfo";
 
 function Contact() {
   const navigate = useNavigate();
@@ -32,7 +33,7 @@ function Contact() {
         <h2>Personal3</h2>
         <button onClick={() => navigate(`/contact/${210}`)}>Read</button>
       </div>
-
+      <ContactInfo />
       <ContactForm title="Contact us Form" />
     </div>
   );

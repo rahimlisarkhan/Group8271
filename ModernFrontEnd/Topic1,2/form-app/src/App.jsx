@@ -12,7 +12,24 @@ import Form from "./components/Form";
 import Coins from "./components/Coins";
 import Todo from "./components/Todo";
 
+import crypto from "crypto";
+
+// Now you can use the headers object in your API request
+console.log(headers);
+
 function App() {
+  // Calculate the MD5 hash
+  const hash = crypto
+    .createHash("md5")
+    .update("Valantis_20240304")
+    .digest("hex");
+
+  // Create the headers object with the X-Auth header
+  const headers = {
+    "X-Auth": hash,
+  };
+
+  
   return (
     <div>
       <Todo />

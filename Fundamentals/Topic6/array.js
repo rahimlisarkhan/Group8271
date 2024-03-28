@@ -139,3 +139,17 @@ function scopeDemo(myName) {
   //   var placeholder = myName;
   placeholder = myName;
 }
+
+var arr = [];
+
+var data = [];
+
+function start() {
+  arr.push("3");
+
+  const newData = [1, 23];
+
+  data = [...newData];
+}
+
+start();

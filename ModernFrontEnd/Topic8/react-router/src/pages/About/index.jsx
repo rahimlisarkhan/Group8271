@@ -3,11 +3,14 @@ import { useEffect, useCallback, useMemo } from "react";
 import Navbar from "../../components/Navbar";
 import { Checkbox } from "../../components/CheckBox";
 import { useTitle } from "../../hooks/useTitle";
+import { useGlobalStore } from "../../store/global/useGlobalStore";
 
 // const arr = [1, 2, 34, 5];
 
 function About(props) {
   // const  {push} = useRouter()
+
+  const { basketCount } = useGlobalStore();
 
   useTitle("About Seymur");
 
@@ -46,7 +49,7 @@ function About(props) {
   return (
     <div>
       <Navbar />
-      <h1>About</h1>
+      <h1>About :{basketCount}</h1>
       <h2>{arr}</h2>
       <Checkbox />
       <Checkbox />
