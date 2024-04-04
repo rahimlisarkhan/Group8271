@@ -1,10 +1,15 @@
-import { Box, Button, Stack, Text } from "@chakra-ui/react";
+import { Badge, Box, Button, Stack, Text } from "@chakra-ui/react";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { ROUTER } from "../../constant/router";
+import { useGlobalStore } from "../../store/global/GlobalProvider";
 
 function Header() {
   const navigate = useNavigate();
+
+  const { state } = useGlobalStore();
+
+  const favCount = state.favorites?.length;
 
   return (
     <Box
@@ -43,6 +48,19 @@ function Header() {
           onClick={() => navigate(ROUTER.ABOUT)}
         >
           About
+        </Button>
+        <Button
+          variant="ghost"
+          as="li"
+          color="white"
+          onClick={() => navigate(ROUTER.FAV)}
+        >
+          Favorites
+          {!!favCount && (
+            <Badge variant="solid" colorScheme="red">
+              {favCount}
+            </Badge>
+          )}
         </Button>
         <Button
           variant="ghost"

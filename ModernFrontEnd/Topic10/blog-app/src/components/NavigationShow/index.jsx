@@ -3,7 +3,7 @@ import React from "react";
 
 import { ChevronRightIcon } from "@chakra-ui/icons";
 
-function NavigationShow() {
+function NavigationShow({ routes }) {
   return (
     <Breadcrumb
       spacing="8px"
@@ -11,13 +11,11 @@ function NavigationShow() {
       px={10}
       separator={<ChevronRightIcon color="gray.500" />}
     >
-      <BreadcrumbItem>
-        <BreadcrumbLink href="#">Articles</BreadcrumbLink>
-      </BreadcrumbItem>
-
-      <BreadcrumbItem>
-        <BreadcrumbLink href="#">Jsde yenilikler</BreadcrumbLink>
-      </BreadcrumbItem>
+      {routes?.map((routName) => (
+        <BreadcrumbItem>
+          <BreadcrumbLink href="#">{routName}</BreadcrumbLink>
+        </BreadcrumbItem>
+      ))}
     </Breadcrumb>
   );
 }

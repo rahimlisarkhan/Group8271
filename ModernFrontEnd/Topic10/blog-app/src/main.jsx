@@ -6,6 +6,7 @@ import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { BrowserRouter } from "react-router-dom";
 
 import "./styles/global.css";
+import GlobalProvider from "./store/global/GlobalProvider.jsx";
 
 const colors = {
   brand: {
@@ -13,15 +14,20 @@ const colors = {
     800: "#153e75",
     700: "#2a69ac",
   },
+  xususisari: {
+    700: "#f321",
+  },
 };
 
 const theme = extendTheme({ colors });
 
 const rootElement = document.getElementById("root");
 ReactDOM.createRoot(rootElement).render(
-  <ChakraProvider theme={theme}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </ChakraProvider>
+  <BrowserRouter>
+    <ChakraProvider theme={theme}>
+      <GlobalProvider>
+        <App />
+      </GlobalProvider>
+    </ChakraProvider>
+  </BrowserRouter>
 );

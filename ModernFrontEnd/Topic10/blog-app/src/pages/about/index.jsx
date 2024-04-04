@@ -1,7 +1,12 @@
 import React from "react";
 import { Box, Text } from "@chakra-ui/react";
+import { useLocation, useParams } from "react-router-dom";
 
-function HomePage() {
+function AboutPage() {
+  const a = useLocation();
+
+  console.log("a", a);
+
   return (
     <div>
       {/* <Box w="100%" h="200px" bgGradient="linear(to-t, green.200, pink.500)" />
@@ -23,4 +28,4 @@ function HomePage() {
   );
 }
 
-export default HomePage;
+export default AboutPage;

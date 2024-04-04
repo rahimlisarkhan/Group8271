@@ -3,6 +3,7 @@ import { Spinner } from "@chakra-ui/react";
 import { Route, Routes } from "react-router-dom";
 
 import { ROUTER } from "./constant/router.js";
+import FavPage from "./pages/favorites/index.jsx";
 
 const Home = lazy(() => import("./pages/home"));
 const About = lazy(() => import("./pages/about"));
@@ -32,6 +33,7 @@ function App() {
         <Route path="/favorites" element={<HomePage />} /> */}
 
         <Route path={ROUTER.ARTICLES} element={<Articles />} />
+        <Route path={ROUTER.FAV} element={<FavPage />} />
         <Route path={ROUTER.ARTICLE_CREATE} element={<ArticleCreate />} />
         <Route path={ROUTER.ARTICLES + "/:id"} element={<ArticleDetail />} />
 
