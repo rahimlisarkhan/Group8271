@@ -4,9 +4,12 @@ import BlogCard from "../../components/BlogCard";
 import NavigationShow from "../../components/NavigationShow";
 import { useNavigate } from "react-router-dom";
 import { useGlobalStore } from "../../store/global/GlobalProvider";
+import { useTitle } from "../../hooks/useTitle";
 
 function FavPage() {
   const navigate = useNavigate();
+
+  useTitle("Favorites | Blog app");
 
   const {
     state: { favorites },

@@ -1,6 +1,6 @@
-import { Badge, Box, Button, Stack, Text } from "@chakra-ui/react";
+import { Badge, Box, Button, ButtonGroup, Stack, Text } from "@chakra-ui/react";
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { ROUTER } from "../../constant/router";
 import { useGlobalStore } from "../../store/global/GlobalProvider";
 
@@ -9,25 +9,31 @@ function Header() {
 
   const { state } = useGlobalStore();
 
+  const { pathname } = useLocation();
+
+  const isActive = (p) => (pathname == p ? "orange" : "white");
+
   const favCount = state.favorites?.length;
 
   return (
     <Box
       height="100px"
       p="12px"
+      px={50}
       alignItems="center"
       display="flex"
       justifyContent="space-between"
       backgroundColor="teal"
     >
-      <Text as="h1" fontSize="4xl" color="white">
+      <Text as="h1" fontSize="4xl" color="white" fontWeight={600}>
         Blog
       </Text>
 
       <Stack direction="row" spacing={4} align="center" as="ul">
         <Button
           variant="ghost"
-          color="white"
+          cursor="pointer"
+          color={isActive(ROUTER.HOME)}
           as="li"
           onClick={() => navigate(ROUTER.HOME)}
         >
@@ -35,7 +41,8 @@ function Header() {
         </Button>
         <Button
           variant="ghost"
-          color="white"
+          cursor="pointer"
+          color={isActive(ROUTER.ARTICLES)}
           as="li"
           onClick={() => navigate(ROUTER.ARTICLES)}
         >
@@ -43,16 +50,18 @@ function Header() {
         </Button>
         <Button
           variant="ghost"
+          cursor="pointer"
           as="li"
-          color="white"
+          color={isActive(ROUTER.ABOUT)}
           onClick={() => navigate(ROUTER.ABOUT)}
         >
           About
         </Button>
         <Button
           variant="ghost"
+          cursor="pointer"
           as="li"
-          color="white"
+          color={isActive(ROUTER.FAV)}
           onClick={() => navigate(ROUTER.FAV)}
         >
           Favorites
@@ -64,16 +73,22 @@ function Header() {
         </Button>
         <Button
           variant="ghost"
-          color="white"
+          cursor="pointer"
+          color={isActive(ROUTER.FAQ)}
           as="li"
           onClick={() => navigate(ROUTER.FAQ)}
         >
           FAQ
         </Button>
-        <Button onClick={() => navigate(ROUTER.ARTICLE_CREATE)} as="li">
-          Create your article
-        </Button>
       </Stack>
+      <ButtonGroup>
+        <Button onClick={() => navigate(ROUTER.ARTICLE_CREATE)} as="li">
+          Create
+        </Button>
+        <Button onClick={() => navigate(ROUTER.SETTING)} as="li">
+          Setting
+        </Button>
+      </ButtonGroup>
     </Box>
   );
 }

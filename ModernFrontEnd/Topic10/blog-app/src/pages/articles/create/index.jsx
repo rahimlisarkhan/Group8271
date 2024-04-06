@@ -1,25 +1,68 @@
 import React from "react";
-import { Box, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Divider,
+  FormControl,
+  FormHelperText,
+  FormLabel,
+  Image,
+  Input,
+  Select,
+  Text,
+  Textarea,
+} from "@chakra-ui/react";
+import Header from "../../../components/Header";
 
 function ArticleCreatePage() {
   return (
-    <div>
-      {/* <Box w="100%" h="200px" bgGradient="linear(to-t, green.200, pink.500)" />
-      <Box
-        w="100%"
-        h="200px"
-        bgGradient="radial(gray.300, yellow.400, pink.200)"
-      /> */}
+    <>
+      <Header />
+      <Box py={100} px={250}>
+        <Text fontSize="6xl" align="center" fontWeight={600}>
+          Create Your Blog
+        </Text>
 
-      <Text
-        bgGradient="linear(to-l, #7928CA, #FF0080)"
-        bgClip="text"
-        fontSize="6xl"
-        fontWeight="extrabold"
-      >
-        Home
-      </Text>
-    </div>
+        <Box display="flex" flexDirection="column" my={10} gap={6}>
+          <Image
+            width={200}
+            height={200}
+            objectFit="cover"
+            borderRadius={10}
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfY64FmgMyoDjqvRuoz32rYEVB5puOZTO9QQmmDqd7Fg&s"
+          />
+          <FormControl>
+            <FormLabel>Cover Url</FormLabel>
+            <Input />
+            {/* <FormHelperText>We'll never share your email.</FormHelperText> */}
+          </FormControl>
+          <Divider />
+          <FormControl>
+            <FormLabel>Title</FormLabel>
+            <Input />
+            {/* <FormHelperText>We'll never share your email.</FormHelperText> */}
+          </FormControl>
+
+          <FormControl>
+            <FormLabel>Description</FormLabel>
+            <Textarea />
+            {/* <FormHelperText>We'll never share your email.</FormHelperText> */}
+          </FormControl>
+
+          <FormControl>
+            <FormLabel>Category</FormLabel>
+            <Select placeholder="Select category">
+              <option value="option1">Option 1</option>
+              <option value="option2">Option 2</option>
+              <option value="option3">Option 3</option>
+            </Select>
+          </FormControl>
+          <Button colorScheme="teal" my={10}>
+            Create blog
+          </Button>
+        </Box>
+      </Box>
+    </>
   );
 }
 

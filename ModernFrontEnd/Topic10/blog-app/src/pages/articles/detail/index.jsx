@@ -12,22 +12,21 @@ import { AddIcon, MinusIcon } from "@chakra-ui/icons";
 import { useGlobalStore } from "../../../store/global/GlobalProvider";
 import { TYPES } from "../../../store/global/types";
 import NavigationShow from "../../../components/NavigationShow";
+import { useTitle } from "../../../hooks/useTitle";
 
 function ArticleDetailPage() {
   const { id } = useParams();
 
   const { state, dispatch } = useGlobalStore();
 
-  console.log("state", state.favorites);
-
   const { data, loading } = useFetchData({
     requestFn: () => getBlogId(id),
     dependecy: [id],
   });
 
-  const isFav = state.favorites.find((item) => item.id == id);
+  useTitle(`${data?.title} | Blog app`);
 
-  console.log("isFav", isFav);
+  const isFav = state.favorites.find((item) => item.id == id);
 
   const handleToggleFav = async () => {
     if (isFav) {
