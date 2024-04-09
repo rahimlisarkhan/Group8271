@@ -5,6 +5,7 @@ import { Route, Routes } from "react-router-dom";
 import { ROUTER } from "./constant/router.js";
 import FavPage from "./pages/favorites/index.jsx";
 import SettingPage from "./pages/setting/index.jsx";
+import Loading from "./components/Loading/index.jsx";
 
 const Home = lazy(() => import("./pages/home"));
 const About = lazy(() => import("./pages/about"));
@@ -16,17 +17,7 @@ const Faq = lazy(() => import("./pages/faq"));
 
 function App() {
   return (
-    <Suspense
-      fallback={
-        <Spinner
-          thickness="4px"
-          speed="0.65s"
-          emptyColor="gray.200"
-          color="teal.500"
-          size="xl"
-        />
-      }
-    >
+    <Suspense fallback={<Loading />}>
       <Routes>
         <Route path={ROUTER.HOME} element={<Home />} />
         <Route path={ROUTER.ABOUT} element={<About />} />

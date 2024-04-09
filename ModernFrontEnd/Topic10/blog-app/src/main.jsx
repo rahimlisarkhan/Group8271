@@ -4,8 +4,11 @@ import App from "./App.jsx";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 
 import { BrowserRouter } from "react-router-dom";
-
+import "react-toastify/dist/ReactToastify.css";
 import "./styles/global.css";
+
+import { ToastContainer } from "react-toastify";
+
 import GlobalProvider from "./store/global/GlobalProvider.jsx";
 
 const colors = {
@@ -27,6 +30,7 @@ ReactDOM.createRoot(rootElement).render(
     <ChakraProvider theme={theme}>
       <GlobalProvider>
         <App />
+        <ToastContainer />
       </GlobalProvider>
     </ChakraProvider>
   </BrowserRouter>

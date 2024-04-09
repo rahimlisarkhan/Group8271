@@ -10,8 +10,11 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import { shortText } from "../../utils/shortText";
+import { categories } from "../../constant/categories";
 
-function BlogCard({ title, cover_url, desc, onReadMore }) {
+function BlogCard({ title, cover_url, desc, onReadMore, category }) {
+  const blogCategory = categories?.find((item) => item.id == category);
+
   return (
     <Card
       direction={{ base: "column", sm: "row" }}
@@ -28,8 +31,13 @@ function BlogCard({ title, cover_url, desc, onReadMore }) {
 
       <Stack>
         <CardBody>
-          <Heading size="md">{title}</Heading>
-          <Text py="2">{shortText(desc, 80)}</Text>
+          <Heading size="sm" color="teal">
+            Category: {blogCategory.title}
+          </Heading>
+          <Heading size="md" py="2">
+            {title}
+          </Heading>
+          <Text>{shortText(desc, 80)}</Text>
         </CardBody>
 
         <CardFooter>

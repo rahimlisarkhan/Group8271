@@ -26,7 +26,7 @@ function Header() {
       backgroundColor="teal"
     >
       <Text as="h1" fontSize="4xl" color="white" fontWeight={600}>
-        Blog
+        Devil
       </Text>
 
       <Stack direction="row" spacing={4} align="center" as="ul">
@@ -81,11 +81,12 @@ function Header() {
           FAQ
         </Button>
       </Stack>
+
       <ButtonGroup>
-        <Button onClick={() => navigate(ROUTER.ARTICLE_CREATE)} as="li">
+        <Button onClick={() => navigate(ROUTER.ARTICLE_CREATE)} as="button">
           Create
         </Button>
-        <Button onClick={() => navigate(ROUTER.SETTING)} as="li">
+        <Button onClick={() => navigate(ROUTER.SETTING)} as="button">
           Setting
         </Button>
       </ButtonGroup>
