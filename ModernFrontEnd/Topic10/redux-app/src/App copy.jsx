@@ -70,3 +70,18 @@ function App() {
 }
 
 export default App;
+
+// const colors = [
+//   { name: "Orange", code: "#dsjds" },
+//   { name: "Red", code: "#dsjds" },
+//   { name: "Red", code: "#dsjds" },
+//   { name: "Red", code: "#dsjds" },
+//   { name: "Red", code: "#dsjds" },
+// ];
+
+// const group = {
+//   group_name:"Besteller",
+//   colors
+// }
+
+// const groups = [group,group,group,group,group]
