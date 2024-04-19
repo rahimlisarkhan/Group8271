@@ -12,7 +12,7 @@ function NavigationShow({ routes }) {
       separator={<ChevronRightIcon color="gray.500" />}
     >
       {routes?.map((routName) => (
-        <BreadcrumbItem>
+        <BreadcrumbItem key={routName}>
           <BreadcrumbLink href="#">{routName}</BreadcrumbLink>
         </BreadcrumbItem>
       ))}

@@ -128,7 +128,7 @@ function SettingPage() {
               {data
                 ?.filter((item, index) => item.id > 100)
                 ?.map((item) => (
-                  <Tr key={"item-" + item?.id}>
+                  <Tr key={"iteTrm-" + item?.id}>
                     <Td>
                       <Image
                         width={10}
@@ -138,9 +138,11 @@ function SettingPage() {
                         src={item?.cover_url}
                       />
                     </Td>
-                    <Tooltip label={item?.title}>
-                      <Td>{shortText(item?.title, 15)}</Td>
-                    </Tooltip>
+                    <Td>
+                      <Tooltip label={item?.title}>
+                        {shortText(item?.title, 15)}
+                      </Tooltip>
+                    </Td>
                     <Td>{shortText(item?.desc, 15)}</Td>
                     <Td>
                       <ButtonGroup>

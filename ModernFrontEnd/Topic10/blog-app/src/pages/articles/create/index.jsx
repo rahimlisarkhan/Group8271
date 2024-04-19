@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import {
   Box,
   Button,
@@ -37,22 +37,52 @@ const initialValues = {
 
 function ArticleCreatePage() {
   const [par] = useSearchParams();
-  const blogId = par.get("blog_id");
+  const blogId = useMemo(() => par.get("blog_id"), [par]);
 
   const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
   const toast = useToast();
 
-  useFetchData({
-    condition: !blogId,
-    requestFn: () => getBlogId(blogId),
-    dependecy: [blogId],
-    onSuccess: (data) => {
-      const { title, desc, cover_url, category, images } = data;
-      setValues({ title, desc, cover_url, category, images, time: Date.now() });
+  const handleEditBlog = useCallback(
+    async (data, { resetForm }) => {
+      console.log("data", data);
+      setLoading(true);
+
+      try {
+        if (blogId) {
+          await uptBlog(blogId, data);
+          navigate(ROUTER.SETTING);
+        } else {
+          await crtBlog(data);
+          navigate(ROUTER.ARTICLES);
+        }
+
+        resetForm();
+
+        toast({
+          title: blogId ? "Blog updated." : "Blog created.",
+          // description: "We've created your account for you.",
+          status: "success",
+          colorScheme: "teal",
+          duration: 2000,
+          isClosable: true,
+        });
+      } catch (err) {
+        toast({
+          title: err?.message,
+          // description: "",
+          status: "error",
+          colorScheme: "red",
+          duration: 2000,
+          isClosable: true,
+        });
+      } finally {
+        setLoading(false);
+      }
     },
-  });
+    [blogId]
+  );
 
   const { values, handleChange, errors, handleSubmit, setValues } = useFormik({
     initialValues,
@@ -80,6 +110,18 @@ function ArticleCreatePage() {
     },
   });
 
+  useFetchData({
+    condition: !blogId,
+    requestFn: () => getBlogId(blogId),
+    dependecy: [blogId],
+    onSuccess: (data) => {
+      const { title, desc, cover_url, category, images } = data;
+      setValues({ title, desc, cover_url, category, images, time: Date.now() });
+    },
+  });
+
+  console.log("values", values);
+
   useEffect(() => {
     if (!blogId) return;
 
@@ -92,47 +134,16 @@ function ArticleCreatePage() {
     });
   }, [blogId]);
 
-  async function handleEditBlog(data, { resetForm }) {
-    console.log("data", data);
-    setLoading(true);
+  const handleImageInput = useCallback(
+    (value, index) => {
+      const newValues = { ...values };
 
-    try {
-      if (blogId) {
-        await uptBlog(blogId, data);
-        navigate(ROUTER.SETTING);
-      } else {
-        await crtBlog(data);
-        navigate(ROUTER.ARTICLES);
-      }
+      newValues.images[index] = value;
 
-      toast({
-        title: blogId ? "Blog updated." : "Blog created.",
-        // description: "We've created your account for you.",
-        status: "success",
-        colorScheme: "teal",
-        duration: 2000,
-        isClosable: true,
-      });
-    } catch (err) {
-      toast({
-        title: err?.message,
-        // description: "",
-        status: "error",
-        colorScheme: "red",
-        duration: 2000,
-        isClosable: true,
-      });
-    } finally {
-      setLoading(false);
-    }
-  }
-
-  const handleImageInput = (value, index) => {
-    const newValues = { ...values };
-
-    newValues.images[index] = value;
-    setValues(newValues);
-  };
+      setValues(newValues);
+    },
+    [values]
+  );
 
   return (
     <>
@@ -153,14 +164,18 @@ function ArticleCreatePage() {
           />
           <FormControl>
             <FormLabel>Cover Url</FormLabel>
-            <Input name="cover_url" onChange={handleChange} />
+            <Input
+              name="cover_url"
+              value={values.cover_url}
+              onChange={handleChange}
+            />
             {errors?.cover_url && (
               <FormHelperText color="red">{errors?.cover_url}</FormHelperText>
             )}
           </FormControl>
           <FormControl>
             <FormLabel>Title</FormLabel>
-            <Input name="title" onChange={handleChange} />
+            <Input name="title" value={values.title} onChange={handleChange} />
             {errors?.title && (
               <FormHelperText color="red">{errors?.title}</FormHelperText>
             )}
@@ -168,7 +183,7 @@ function ArticleCreatePage() {
 
           <FormControl>
             <FormLabel>Description</FormLabel>
-            <Textarea name="desc" onChange={handleChange} />
+            <Textarea name="desc" value={values.desc} onChange={handleChange} />
             {errors?.desc && (
               <FormHelperText color="red">{errors?.desc}</FormHelperText>
             )}
@@ -179,7 +194,9 @@ function ArticleCreatePage() {
             <Select name="category" onChange={handleChange}>
               <option selected>Select category</option>
               {categories?.map((item, index) => (
-                <option value={item.id}>{item.title}</option>
+                <option selected={item.id == values.category} value={item.id}>
+                  {item.title}
+                </option>
               ))}
             </Select>
           </FormControl>
@@ -220,6 +237,7 @@ function ArticleCreatePage() {
             colorScheme="teal"
             my={10}
             onClick={handleSubmit}
+            disabled={loading}
             isLoading={loading}
           >
             {blogId ? "Update" : "Create"} blog

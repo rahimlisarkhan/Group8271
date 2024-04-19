@@ -3,17 +3,22 @@ import Header from "../../components/Header";
 import BlogCard from "../../components/BlogCard";
 import NavigationShow from "../../components/NavigationShow";
 import { useNavigate } from "react-router-dom";
-import { useGlobalStore } from "../../store/global/GlobalProvider";
+// import { useGlobalStore } from "../../store/global/GlobalProvider";
 import { useTitle } from "../../hooks/useTitle";
+import { selFavorites } from "../../redux/global/globalSlice";
+
+import { useSelector } from "react-redux";
 
 function FavPage() {
   const navigate = useNavigate();
 
   useTitle("Favorites | Blog app");
 
-  const {
-    state: { favorites },
-  } = useGlobalStore();
+  // const {
+  //   state: { favorites },
+  // } = useGlobalStore();
+
+  const favorites = useSelector(selFavorites);
 
   return (
     <>

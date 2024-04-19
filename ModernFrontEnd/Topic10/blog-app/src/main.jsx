@@ -9,7 +9,11 @@ import "./styles/global.css";
 
 import { ToastContainer } from "react-toastify";
 
-import GlobalProvider from "./store/global/GlobalProvider.jsx";
+// import GlobalProvider from "./store/global/GlobalProvider.jsx";
+import { Provider } from "react-redux";
+import { store } from "./redux/store.js";
+
+import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
 
 const colors = {
   brand: {
@@ -22,16 +26,22 @@ const colors = {
   },
 };
 
+const queryClient = new QueryClient();
+
 const theme = extendTheme({ colors });
 
 const rootElement = document.getElementById("root");
 ReactDOM.createRoot(rootElement).render(
   <BrowserRouter>
     <ChakraProvider theme={theme}>
-      <GlobalProvider>
-        <App />
-        <ToastContainer />
-      </GlobalProvider>
+      <Provider store={store}>
+        <QueryClientProvider client={queryClient}>
+          {/* <GlobalProvider> */}
+          <App />
+          <ToastContainer />
+          {/* </GlobalProvider> */}
+        </QueryClientProvider>
+      </Provider>
     </ChakraProvider>
   </BrowserRouter>
 );

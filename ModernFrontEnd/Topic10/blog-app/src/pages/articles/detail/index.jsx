@@ -9,15 +9,28 @@ import Loading from "../../../components/Loading";
 import { convertTime } from "../../../utils/convertTime";
 
 import { AddIcon, MinusIcon } from "@chakra-ui/icons";
-import { useGlobalStore } from "../../../store/global/GlobalProvider";
+// import { useGlobalStore } from "../../../store/global/GlobalProvider";
 import { TYPES } from "../../../store/global/types";
 import NavigationShow from "../../../components/NavigationShow";
 import { useTitle } from "../../../hooks/useTitle";
 
+import {
+  selFavorites,
+  toggleFavorite,
+} from "../../../redux/global/globalSlice";
+
+import { useSelector, useDispatch } from "react-redux";
+
 function ArticleDetailPage() {
   const { id } = useParams();
 
-  const { state, dispatch } = useGlobalStore();
+  // const favorites = useSelector((state) => state.global.favorites);
+  const favorites = useSelector(selFavorites);
+  const dispatch = useDispatch();
+
+  console.log("a", favorites);
+
+  // const { state, dispatch } = useGlobalStore();
 
   const { data, loading } = useFetchData({
     requestFn: () => getBlogId(id),
@@ -26,21 +39,24 @@ function ArticleDetailPage() {
 
   useTitle(`${data?.title} | Blog app`);
 
-  const isFav = state.favorites.find((item) => item.id == id);
+  const isFav = favorites.find((item) => item.id == id);
 
   const handleToggleFav = async () => {
-    if (isFav) {
-      // await axios({method:"POST",url:"/favorite/add",data:{id}})
-      //? remove
-      const filterFav = state.favorites.filter((item) => item.id != id);
+    const payload = { id, data };
+    dispatch(toggleFavorite(payload));
 
-      dispatch({ type: TYPES.TOGGLE_FAV, payload: filterFav });
-      return;
-    }
+    // if (isFav) {
+    //   // await axios({method:"POST",url:"/favorite/add",data:{id}})
+    //   //? remove
+    //   const filterFav = favorites.filter((item) => item.id != id);
 
-    // await axios({method:"POST",url:"/favorite/delete",data:{id}})
-    //? add
-    dispatch({ type: TYPES.TOGGLE_FAV, payload: [...state.favorites, data] });
+    //   dispatch({ type: TYPES.TOGGLE_FAV, payload: filterFav });
+    //   return;
+    // }
+
+    // // await axios({method:"POST",url:"/favorite/delete",data:{id}})
+    // //? add
+    // dispatch({ type: TYPES.TOGGLE_FAV, payload: [...favorites, data] });
   };
 
   return (
@@ -61,7 +77,7 @@ function ArticleDetailPage() {
             gap="16px"
           >
             <Text bgClip="text" fontSize="md" fontWeight="medium" color="gray">
-              {convertTime(parseInt(data?.time))}
+              {convertTime(parseInt(data?.time || data?.created))}
             </Text>
             <Text
               bgClip="text"

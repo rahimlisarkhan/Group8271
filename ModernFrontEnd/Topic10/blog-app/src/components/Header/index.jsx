@@ -2,18 +2,30 @@ import { Badge, Box, Button, ButtonGroup, Stack, Text } from "@chakra-ui/react";
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { ROUTER } from "../../constant/router";
-import { useGlobalStore } from "../../store/global/GlobalProvider";
+// import { useGlobalStore } from "../../store/global/GlobalProvider";
+import { selFavorites } from "../../redux/global/globalSlice";
+import { useSelector } from "react-redux";
+import { useQueryClient } from "@tanstack/react-query";
 
 function Header() {
   const navigate = useNavigate();
 
-  const { state } = useGlobalStore();
+  const favorites = useSelector(selFavorites);
+
+  const queryClient = useQueryClient();
+
+  const articles = queryClient.getQueryData(["blogs"])?.data;
+
+  console.log("articles", articles);
+
+  // const { state } = useGlobalStore();
 
   const { pathname } = useLocation();
 
   const isActive = (p) => (pathname == p ? "orange" : "white");
 
-  const favCount = state.favorites?.length;
+  // const favCount = state.favorites?.length;
+  const favCount = favorites?.length;
 
   return (
     <Box
@@ -47,6 +59,11 @@ function Header() {
           onClick={() => navigate(ROUTER.ARTICLES)}
         >
           Articles
+          {!!articles?.length && (
+            <Badge variant="solid" colorScheme="red">
+              {articles?.length}
+            </Badge>
+          )}
         </Button>
         <Button
           variant="ghost"

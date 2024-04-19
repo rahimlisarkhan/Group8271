@@ -32,7 +32,7 @@ function BlogCard({ title, cover_url, desc, onReadMore, category }) {
       <Stack>
         <CardBody>
           <Heading size="sm" color="teal">
-            Category: {blogCategory.title}
+            Category: {blogCategory?.title}
           </Heading>
           <Heading size="md" py="2">
             {title}

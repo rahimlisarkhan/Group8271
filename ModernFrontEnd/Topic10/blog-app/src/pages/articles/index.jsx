@@ -17,17 +17,27 @@ import Loading from "../../components/Loading";
 import SearchBox from "../../components/SearchBox";
 import { useTitle } from "../../hooks/useTitle";
 
+import { useQuery } from "@tanstack/react-query";
+
 function ArticlesPage() {
   const navigate = useNavigate();
 
   const [searchData, setSearchData] = useState();
 
-  const { data, loading } = useFetchData({
-    requestFn: () => getBlogs(),
+  const { data, isLoading } = useQuery({
+    queryKey: ["blogs"],
+    queryFn: getBlogs,
+    refetchInterval: false,
+    refetchOnWindowFocus: false,
+    refetchOnReconnect: true,
   });
 
+  // const { data, loading } = useFetchData({
+  //   requestFn: () => getBlogs(),
+  // });
+
   useEffect(() => {
-    setSearchData(data);
+    setSearchData(data?.data);
   }, [data]);
 
   useTitle(`Articles | Blog app`);
@@ -83,7 +93,7 @@ function ArticlesPage() {
           onSearch={handleSearch}
         />
       </Box>
-      {loading ? (
+      {isLoading ? (
         <Loading />
       ) : (
         <SimpleGrid columns={{ sm: 2 }} p="20" spacing="10">

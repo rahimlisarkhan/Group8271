@@ -12,6 +12,8 @@ export const useFetchData = ({
   const [error, setError] = useState();
 
   useEffect(() => {
+    // if (condition) return;
+
     if (condition) return;
 
     const fetchData = async () => {
@@ -28,6 +30,10 @@ export const useFetchData = ({
       }
     };
     fetchData();
+
+    // return ()=>{
+
+    // }
   }, [...dependecy]);
 
   return { data, loading, error, setData };

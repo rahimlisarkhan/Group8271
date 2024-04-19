@@ -1,16 +1,15 @@
 import { Suspense, lazy } from "react";
-import { Spinner } from "@chakra-ui/react";
 import { Route, Routes } from "react-router-dom";
 
 import { ROUTER } from "./constant/router.js";
-import FavPage from "./pages/favorites/index.jsx";
-import SettingPage from "./pages/setting/index.jsx";
 import Loading from "./components/Loading/index.jsx";
 
 const Home = lazy(() => import("./pages/home"));
 const About = lazy(() => import("./pages/about"));
 const NotFound = lazy(() => import("./pages/notfound"));
 const Articles = lazy(() => import("./pages/articles"));
+const SettingPage = lazy(() => import("./pages/setting"));
+const FavPage = lazy(() => import("./pages/favorites"));
 const ArticleDetail = lazy(() => import("./pages/articles/detail"));
 const ArticleCreate = lazy(() => import("./pages/articles/create"));
 const Faq = lazy(() => import("./pages/faq"));
