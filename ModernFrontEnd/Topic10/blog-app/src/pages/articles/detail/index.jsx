@@ -20,6 +20,7 @@ import {
 } from "../../../redux/global/globalSlice";
 
 import { useSelector, useDispatch } from "react-redux";
+import { useQuery } from "@tanstack/react-query";
 
 function ArticleDetailPage() {
   const { id } = useParams();
@@ -32,12 +33,25 @@ function ArticleDetailPage() {
 
   // const { state, dispatch } = useGlobalStore();
 
-  const { data, loading } = useFetchData({
-    requestFn: () => getBlogId(id),
-    dependecy: [id],
+  const { data, isFetching } = useQuery({
+    // queryKey: ["blog", id],
+    queryKey: ["blog_detail"],
+    queryFn: () => getBlogId(id),
+    refetchInterval: false,
+    refetchOnWindowFocus: false,
+    refetchOnReconnect: true,
   });
 
-  useTitle(`${data?.title} | Blog app`);
+  const articleItem = data?.data;
+
+  console.log('"data', data);
+
+  // const { data, loading } = useFetchData({
+  //   requestFn: () => getBlogId(id),
+  //   dependecy: [id],
+  // });
+
+  useTitle(`${articleItem?.title} | Blog app`);
 
   const isFav = favorites.find((item) => item.id == id);
 
@@ -62,13 +76,13 @@ function ArticleDetailPage() {
   return (
     <>
       <Header />
-      <NavigationShow routes={["Articles", data?.title]} />
-      {loading ? (
+      <NavigationShow routes={["Articles", articleItem?.title]} />
+      {isFetching ? (
         <Loading />
       ) : (
         <SimpleGrid bg="gray.50" columns={{ sm: 2 }} spacing="2" p="10">
           <Box>
-            <Image src={data?.cover_url} alt={data?.title} />
+            <Image src={articleItem?.cover_url} alt={data?.title} />
           </Box>
           <Box
             display="flex"
@@ -77,7 +91,7 @@ function ArticleDetailPage() {
             gap="16px"
           >
             <Text bgClip="text" fontSize="md" fontWeight="medium" color="gray">
-              {convertTime(parseInt(data?.time || data?.created))}
+              {convertTime(parseInt(articleItem?.time || articleItem?.created))}
             </Text>
             <Text
               bgClip="text"
@@ -85,11 +99,11 @@ function ArticleDetailPage() {
               fontWeight="extrabold"
               color="black"
             >
-              {data?.title}
+              {articleItem?.title}
             </Text>
 
             <Text bgClip="text" fontSize="lg" fontWeight="medium" color="gray">
-              {data?.desc}
+              {articleItem?.desc}
             </Text>
             <Button
               alignSelf="flex-start"

@@ -18,7 +18,7 @@ const MovieDetail = lazy(() => import("./pages/Movies/Detail"));
 
 function App() {
   return (
-    <GlobalProvider>
+    <GlobalProvider >
       <BrowserRouter>
         {/* <Navbar /> */}
         <Suspense fallback={<h1>Loading...</h1>}>
